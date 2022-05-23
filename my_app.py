@@ -18,14 +18,14 @@ gearing_type=st.sidebar.radio('Select gear type',('Automatic','Manual','Semi-aut
 car_model=st.sidebar.selectbox("Select model of your car", ('A1', 'A2', 'A3','Astra','Clio','Corsa','Espace','Insignia'))
 
 
-model_name=st.selectbox("Select your model:",("XGBOOST","Random Forest"))
+# model_name=st.selectbox("Select your model:",("XGBOOST","Random Forest"))
 
-if model_name=="XGBOOST":
-	model=pickle.load(open("xgb_model","rb"))
-	st.success("You selected {} model".format(model_name))
-else :
-	model=pickle.load(open("rf_model","rb"))
-	st.success("You selected {} model".format(model_name))
+# if model_name=="XGBOOST":
+# 	model=pickle.load(open("xgb_model","rb"))
+# 	st.success("You selected {} model".format(model_name))
+# else :
+# 	model=pickle.load(open("rf_model","rb"))
+# 	st.success("You selected {} model".format(model_name))
 
 
 
@@ -58,3 +58,4 @@ if st.button("Predict"):
     prediction = model.predict(df)
     st.success("The estimated price of your car is €{}. ".format(int(prediction[0])))
     
+
